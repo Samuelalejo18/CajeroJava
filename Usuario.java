@@ -11,14 +11,16 @@ public class Usuario {
         this.saldo = 0.0;
         this.contraseña = contraseña;
     }
-}
 
-public String getUsuario(){
+
+public String getNombre(){
     return nombre;
 }
-public String getSaldo(){
+public double getSaldo(){
     return saldo;
 }
-public String getUsuario(){
+public String getContraseña() {
     return contraseña;
+}
+
 }
