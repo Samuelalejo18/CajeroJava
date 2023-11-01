@@ -4,7 +4,7 @@ public class Principal {
         try (Scanner lector = new Scanner(System.in)) 
 {
             CuentaBancaria cuentaBancaria = new CuentaBancaria();
-             Usuario usuario1= new Usuari
+             Usuario usuario1= new Usuario("Samuel",100000,"LUKAS2012");
 
         }
     }

@@ -8,7 +8,7 @@ public class Usuario {
     
     public Usuario(String nombre, double saldo, String contraseña) {
         this.nombre = nombre;
-        this.saldo = 0.0;
+        this.saldo =saldo;
         this.contraseña = contraseña;
     }
 
@@ -19,6 +19,11 @@ public String getNombre(){
 public double getSaldo(){
     return saldo;
 }
+
+    public  void setSaldo(double saldo ){
+        this.saldo= saldo;
+    }
+
 public String getContraseña() {
     return contraseña;
 }
