@@ -20,6 +20,7 @@ public class Principal {
                 System.out.println("1. Crear una cuenta");
                 System.out.println("2. Ingresa a tu cuenta");
                 System.out.println("0. Salir");
+                System.out.println("\n");
                 opcion = lector.nextInt();
                 lector.nextLine();
 
@@ -44,19 +45,21 @@ public class Principal {
                         WolfBank.Registar(nuevoUsuario);
                         break;
                     case 2:
+                        System.out.println("\n");
                         System.out.println("Ingrese usuario: ");
                         String user = lector.nextLine();
                         System.out.println("Ingrese la contraseña: ");
                         String password = lector.nextLine();
                         WolfBank.Autentificar(user, password);
-                        
+                        System.out.println("\n");
                         break;
 
-
                     case 0:
+                        System.out.println("\n");
                         System.out.println("Saliendo de WolfBank. Hasta la proxima");
                         break;
                     default:
+                        System.out.println("\n");
                         System.out.println("Opción no válida. Por favor, elija una opción válida.");
                         break;
                 }
