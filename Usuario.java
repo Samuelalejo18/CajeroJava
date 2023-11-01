@@ -13,19 +13,19 @@ public class Usuario {
     }
 
 
-public String getNombre(){
-    return nombre;
-}
-public double getSaldo(){
-    return saldo;
-}
+    public String getNombre(){
+        return nombre;
+    }
+    public double getSaldo(){
+        return saldo;
+    }
 
     public  void setSaldo(double saldo ){
         this.saldo= saldo;
     }
 
-public String getContraseña() {
-    return contraseña;
-}
+    public String getContraseña() {
+        return contraseña;
+    }
 
 }

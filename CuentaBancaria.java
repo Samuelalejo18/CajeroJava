@@ -14,14 +14,14 @@ class CuentaBancaria {
             System.out.println("El Usuario'" + Usuario.getNombre() + "' ya existe esta usuario. No se puede registrar nuevamente.");
         }
     }
-public  void Autentificar ( String nombreUsuario, String contraseña){
-Usuario usuarioEncontrado=null;
+    public  void Autentificar ( String nombreUsuario, String contraseña){
+        Usuario usuarioEncontrado=null;
 
-for ( Usuario Usuario : cuentaBancaria){
-    if(usuarioEncontrado.getNombre().equals(nombreUsuario)){
-        usuarioEncontrado=  Usuario;
+        for ( Usuario Usuario : cuentaBancaria){
+        if(usuarioEncontrado.getNombre().equals(nombreUsuario)){
+            usuarioEncontrado=  Usuario;
         break;
-    }
+            }
 }
         if(usuarioEncontrado !=null){
             if( usuarioEncontrado.getContraseña().equals(contraseña)){
@@ -78,12 +78,12 @@ for ( Usuario Usuario : cuentaBancaria){
                      System.out.println(" Tranferencia de" + cantidad+ " realizada exitosamente");
                  } else{
                      System.out.println("Saldo insuficiente");
-                 } else{
+                 } /*else{
                      System.out.println("EL Destinario "+ nombreDestinario+ "no existe");
                  } else{
                      System.out.println("No se puede  realizar la tranferencia");
                  }
-
+*/
              }
         }
      }
