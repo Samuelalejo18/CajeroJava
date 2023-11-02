@@ -7,7 +7,7 @@ class CuentaBancaria {
     private Usuario usuarioAutenticado;
     Scanner lector = new Scanner(System.in);
 
-    public void Registar(Usuario Usuario) {
+    public void Registrar(Usuario Usuario) {
 
         if (!cuentaBancaria.contains(Usuario)) {
             cuentaBancaria.add(Usuario);
@@ -33,9 +33,15 @@ class CuentaBancaria {
     public void Retirar(double cantidad2) {
         if (usuarioAutenticado != null) {
             double saldoActual2 = usuarioAutenticado.getSaldo();
+
+            if(saldoActual2>=cantidad2){
             double nuevoSaldo2 = saldoActual2 - cantidad2;
             usuarioAutenticado.setSaldo(nuevoSaldo2);
-            System.out.println("Retiro de " + cantidad2 + " realizado exitosamente");
+            System.out.println("Retiro de " + cantidad2 + " realizado exitosamente");}
+
+            else{
+                System.out.println("Saldo insuficiente");
+            }
         } else {
             System.out.println("No es psobile realizar el retiro");
         }
@@ -81,7 +87,7 @@ class CuentaBancaria {
         if (usuarioEncontrado != null) {
             if (usuarioEncontrado.getContraseña().equals(contraseña)) {
                 usuarioAutenticado = usuarioEncontrado;
-                System.out.println(" Autentificacion exitosa para el usaurio" + nombreUsuario);
+                System.out.println(" Autentificacion exitosa para el usaurio " + nombreUsuario);
 
                 int opcion = -1; // Operación de tiempo constante, O(1)
 

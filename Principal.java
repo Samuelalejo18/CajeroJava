@@ -9,7 +9,7 @@ public class Principal {
             Usuario Usuario1 = new Usuario("Samuel", 100000, "Lukas2012");
 
             // Registrar los libros en la biblioteca
-            WolfBank.Registar(Usuario1);
+            WolfBank.Registrar(Usuario1);
 
             int opcion = -1; // Operación de tiempo constante, O(1)
 
@@ -41,7 +41,7 @@ public class Principal {
                         // Crear un nuevo libro con los datos proporcionados
                         Usuario nuevoUsuario = new Usuario(nuevoNombre, nuevoSaldo, nuevoContraseña);
                         // Registrar el nuevo libro en la biblioteca
-                        WolfBank.Registar(nuevoUsuario);
+                        WolfBank.Registrar(nuevoUsuario);
                     }
                     case 2 -> {
                         System.out.println("\n");
