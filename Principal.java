@@ -5,7 +5,7 @@ public class Principal {
         try (Scanner lector = new Scanner(System.in)) {
             CuentaBancaria WolfBank = new CuentaBancaria();
 
-            // Crear objetos de la clase Libro
+            // Crear objetos de la clase usuario
             Usuario Usuario1 = new Usuario("Samuel", 100000, "Lukas2012");
 
             // Registrar los libros en la biblioteca
@@ -21,13 +21,13 @@ public class Principal {
                 System.out.println("2. Ingresa a tu cuenta");
                 System.out.println("0. Salir");
                 System.out.println("\n");
-                opcion = lector.nextInt();
-                lector.nextLine();
+                opcion = Integer.parseInt(lector.nextLine());
+
 
                 /* Switch case tiempo constante 0(1) */
                 switch (opcion) {
                     case 1:
-                        /* Caso para registra un nuevo libro, complejidad de tiempo constante */
+                        /* Caso para registra un nuevo usuario, complejidad de tiempo constante */
                         // tiempo constante, O(1)
                         System.out.println("Registrar un nuevo usuario");
                         System.out.println("Ingrese el nombre del usuario: ");
@@ -36,8 +36,8 @@ public class Principal {
                         System.out.println("Ingrese la contraseña: ");
                         String nuevoContraseña = lector.nextLine();
                         System.out.println("Ingrese el saldo: ");
-                        double nuevoSaldo = lector.nextInt();
-                        lector.nextLine();
+                        double nuevoSaldo = Double.parseDouble(lector.nextLine());
+
 
                         // Crear un nuevo libro con los datos proporcionados
                         Usuario nuevoUsuario = new Usuario(nuevoNombre, nuevoSaldo, nuevoContraseña);

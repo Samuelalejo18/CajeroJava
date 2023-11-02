@@ -61,15 +61,12 @@ class CuentaBancaria {
                     System.out.println(" Tranferencia de " + cantidad + " realizada exitosamente");
                 } else {
                     System.out.println("Saldo insuficiente");
-                } /*
-                   * else{
-                   * System.out.println("EL Destinario "+ nombreDestinario+ "no existe");
-                   * } else{
-                   * System.out.println("No se puede  realizar la tranferencia");
-                   * }
-                   */
+                }
             }
-        }
+        } else{
+                    System.out.println("EL Destinario "+ nombreDestinario+ "no existe");
+                    }
+
     }
 
     public void Autentificar(String nombreUsuario, String contraseña) {
@@ -98,29 +95,31 @@ class CuentaBancaria {
                     System.out.println("4. Realizar una transacción");
                     System.out.println("0. Salir");
                     System.out.println("\n");
-                    opcion = lector.nextInt();
-                    lector.nextLine();
+                    opcion =   Integer.parseInt(lector.nextLine());
+
 
                     /* Switch case tiempo constante 0(1) */
                     switch (opcion) {
                         case 1:
-                            System.out.println("\n");
+                           // System.out.println("\n");
                             System.out.println("Tu saldo es de " + usuarioAutenticado.getSaldo());
                             break;
                         case 2:
-                            System.out.println("\n");
-                            double cantidadIngresada = lector.nextDouble();
+                            System.out.println("Digite la cantidad a ingresar");
+                            double cantidadIngresada =  Double.parseDouble(lector.nextLine());
                             Depositar(cantidadIngresada);
                             break;
                         case 3:
-                            System.out.println("\n");
-                            double cantidadRetirada = lector.nextDouble();
+                            System.out.println("Digite la cantidad a retirar");
+                            double cantidadRetirada =  Double.parseDouble(lector.nextLine());
                             Retirar(cantidadRetirada);
                             break;
                         case 4:
-                            System.out.println("\n");
-                            double cantidadEnviar = lector.nextDouble();
+
+                            System.out.println("Ingrese el usuario al que desea enviar");
                             String usarioDestinario = lector.nextLine();
+                            System.out.println("Ingrese la cantidad a enviar");
+                            double cantidadEnviar =  Double.parseDouble(lector.nextLine());
                             Transferir(usarioDestinario, cantidadEnviar);
                             break;
                         case 0:
@@ -134,8 +133,10 @@ class CuentaBancaria {
                     }
                 }
             } else {
-                System.out.println("contraseña incorrecta o el usuario no existe");
+                System.out.println("contraseña incorrecta ");
             }
+        }else {
+            System.out.println("El usuario no existe");
         }
     }
 
