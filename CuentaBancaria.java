@@ -34,12 +34,13 @@ class CuentaBancaria {
         if (usuarioAutenticado != null) {
             double saldoActual2 = usuarioAutenticado.getSaldo();
 
-            if(saldoActual2>=cantidad2){
-            double nuevoSaldo2 = saldoActual2 - cantidad2;
-            usuarioAutenticado.setSaldo(nuevoSaldo2);
-            System.out.println("Retiro de " + cantidad2 + " realizado exitosamente");}
+            if (saldoActual2 >= cantidad2) {
+                double nuevoSaldo2 = saldoActual2 - cantidad2;
+                usuarioAutenticado.setSaldo(nuevoSaldo2);
+                System.out.println("Retiro de " + cantidad2 + " realizado exitosamente");
+            }
 
-            else{
+            else {
                 System.out.println("Saldo insuficiente");
             }
         } else {
@@ -69,9 +70,9 @@ class CuentaBancaria {
                     System.out.println("Saldo insuficiente");
                 }
             }
-        } else{
-                    System.out.println("EL Destinario "+ nombreDestinario+ "no existe");
-                    }
+        } else {
+            System.out.println("EL Destinario " + nombreDestinario + "no existe");
+        }
 
     }
 
@@ -87,7 +88,7 @@ class CuentaBancaria {
         if (usuarioEncontrado != null) {
             if (usuarioEncontrado.getContraseña().equals(contraseña)) {
                 usuarioAutenticado = usuarioEncontrado;
-                System.out.println(" Autentificacion exitosa para el usaurio " + nombreUsuario);
+                System.out.println("Autentificacion exitosa para el usuario " + nombreUsuario);
 
                 int opcion = -1; // Operación de tiempo constante, O(1)
 
@@ -101,14 +102,13 @@ class CuentaBancaria {
                     System.out.println("4. Realizar una transacción");
                     System.out.println("0. Salir");
                     System.out.println("\n");
-                    opcion =   Integer.parseInt(lector.nextLine());
-
+                    opcion = Integer.parseInt(lector.nextLine());
 
                     /* Switch case tiempo constante 0(1) */
                     switch (opcion) {
                         case 1 ->
                             // System.out.println("\n");
-                                System.out.println("Tu saldo es de " + usuarioAutenticado.getSaldo());
+                            System.out.println("Tu saldo es de " + usuarioAutenticado.getSaldo());
                         case 2 -> {
                             System.out.println("Digite la cantidad a ingresar");
                             double cantidadIngresada = Double.parseDouble(lector.nextLine());
@@ -139,7 +139,7 @@ class CuentaBancaria {
             } else {
                 System.out.println("contraseña incorrecta ");
             }
-        }else {
+        } else {
             System.out.println("El usuario no existe");
         }
     }

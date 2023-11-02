@@ -23,7 +23,6 @@ public class Principal {
                 System.out.println("\n");
                 opcion = Integer.parseInt(lector.nextLine());
 
-
                 /* Switch case tiempo constante 0(1) */
                 switch (opcion) {
                     case 1 -> {
@@ -36,7 +35,6 @@ public class Principal {
                         String nuevoContraseña = lector.nextLine();
                         System.out.println("Ingrese el saldo: ");
                         double nuevoSaldo = Double.parseDouble(lector.nextLine());
-
 
                         // Crear un nuevo libro con los datos proporcionados
                         Usuario nuevoUsuario = new Usuario(nuevoNombre, nuevoSaldo, nuevoContraseña);
