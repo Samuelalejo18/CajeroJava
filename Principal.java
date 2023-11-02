@@ -26,13 +26,12 @@ public class Principal {
 
                 /* Switch case tiempo constante 0(1) */
                 switch (opcion) {
-                    case 1:
+                    case 1 -> {
                         /* Caso para registra un nuevo usuario, complejidad de tiempo constante */
                         // tiempo constante, O(1)
                         System.out.println("Registrar un nuevo usuario");
                         System.out.println("Ingrese el nombre del usuario: ");
                         String nuevoNombre = lector.nextLine();
-
                         System.out.println("Ingrese la contraseña: ");
                         String nuevoContraseña = lector.nextLine();
                         System.out.println("Ingrese el saldo: ");
@@ -43,8 +42,8 @@ public class Principal {
                         Usuario nuevoUsuario = new Usuario(nuevoNombre, nuevoSaldo, nuevoContraseña);
                         // Registrar el nuevo libro en la biblioteca
                         WolfBank.Registar(nuevoUsuario);
-                        break;
-                    case 2:
+                    }
+                    case 2 -> {
                         System.out.println("\n");
                         System.out.println("Ingrese usuario: ");
                         String user = lector.nextLine();
@@ -52,16 +51,15 @@ public class Principal {
                         String password = lector.nextLine();
                         WolfBank.Autentificar(user, password);
                         System.out.println("\n");
-                        break;
-
-                    case 0:
+                    }
+                    case 0 -> {
                         System.out.println("\n");
                         System.out.println("Saliendo de WolfBank. Hasta la proxima");
-                        break;
-                    default:
+                    }
+                    default -> {
                         System.out.println("\n");
                         System.out.println("Opción no válida. Por favor, elija una opción válida.");
-                        break;
+                    }
                 }
             }
         }

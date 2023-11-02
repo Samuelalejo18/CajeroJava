@@ -100,36 +100,34 @@ class CuentaBancaria {
 
                     /* Switch case tiempo constante 0(1) */
                     switch (opcion) {
-                        case 1:
-                           // System.out.println("\n");
-                            System.out.println("Tu saldo es de " + usuarioAutenticado.getSaldo());
-                            break;
-                        case 2:
+                        case 1 ->
+                            // System.out.println("\n");
+                                System.out.println("Tu saldo es de " + usuarioAutenticado.getSaldo());
+                        case 2 -> {
                             System.out.println("Digite la cantidad a ingresar");
-                            double cantidadIngresada =  Double.parseDouble(lector.nextLine());
+                            double cantidadIngresada = Double.parseDouble(lector.nextLine());
                             Depositar(cantidadIngresada);
-                            break;
-                        case 3:
+                        }
+                        case 3 -> {
                             System.out.println("Digite la cantidad a retirar");
-                            double cantidadRetirada =  Double.parseDouble(lector.nextLine());
+                            double cantidadRetirada = Double.parseDouble(lector.nextLine());
                             Retirar(cantidadRetirada);
-                            break;
-                        case 4:
-
+                        }
+                        case 4 -> {
                             System.out.println("Ingrese el usuario al que desea enviar");
                             String usarioDestinario = lector.nextLine();
                             System.out.println("Ingrese la cantidad a enviar");
-                            double cantidadEnviar =  Double.parseDouble(lector.nextLine());
+                            double cantidadEnviar = Double.parseDouble(lector.nextLine());
                             Transferir(usarioDestinario, cantidadEnviar);
-                            break;
-                        case 0:
+                        }
+                        case 0 -> {
                             System.out.println("\n");
                             System.out.println("Saliendo de WolfBank. Hasta la proxima");
-                            break;
-                        default:
+                        }
+                        default -> {
                             System.out.println("\n");
                             System.out.println("Opción no válida. Por favor, elija una opción válida.");
-                            break;
+                        }
                     }
                 }
             } else {
