@@ -42,6 +42,8 @@ public class Principal {
                         WolfBank.Registrar(nuevoUsuario);
                     }
                     case 2 -> {
+                        /* Caso para ingresar a la cuenta del  usuario, complejidad de tiempo constante */
+                        // tiempo constante, O(1)
                         System.out.println("\n");
                         System.out.println("Ingrese usuario: ");
                         String user = lector.nextLine();
@@ -51,10 +53,14 @@ public class Principal {
                         System.out.println("\n");
                     }
                     case 0 -> {
+                        /* Caso para salir del menu del banco, complejidad de tiempo constante */
+                        // tiempo constante, O(1)
                         System.out.println("\n");
                         System.out.println("Saliendo de WolfBank. Hasta la proxima");
                     }
                     default -> {
+                        /* Caso para cuando el usuario digita una opcion no valida, complejidad de tiempo constante */
+                        // tiempo constante, O(1)
                         System.out.println("\n");
                         System.out.println("Opción no válida. Por favor, elija una opción válida.");
                     }

@@ -1,13 +1,24 @@
 
 import java.util.LinkedList;
 import java.util.Scanner;
+/**
+ * clase Cuenta bancaria
+ */
 
 class CuentaBancaria {
     LinkedList<Usuario> cuentaBancaria = new LinkedList<>();
     private Usuario usuarioAutenticado;
     Scanner lector = new Scanner(System.in);
 
+    /**
+     * Método que permite registrar un nuevo usuario
+     * @param Usuario
+     * @param Usuario
+     *
+     * Complejidad temporal: O(1) Tiempo constante
+     */
     public void Registrar(Usuario Usuario) {
+
 
         if (!cuentaBancaria.contains(Usuario)) {
             cuentaBancaria.add(Usuario);
@@ -18,6 +29,13 @@ class CuentaBancaria {
         }
     }
 
+    /**
+     * Método que permite depositar a  la cuenta
+     * @param cantidad
+     *
+     *
+     * Complejidad temporal: O(n) Tiempo lineal
+     */
     public void Depositar(double cantidad) {
         if (usuarioAutenticado != null) {
             double saldoActual = usuarioAutenticado.getSaldo();
@@ -29,6 +47,13 @@ class CuentaBancaria {
         }
 
     }
+
+    /**
+     * Método que permite retirar dinero de la cuenta
+     * @param cantidad2
+     *
+     * Complejidad temporal: O(n) Tiempo lineal
+     */
 
     public void Retirar(double cantidad2) {
         if (usuarioAutenticado != null) {
@@ -49,6 +74,13 @@ class CuentaBancaria {
 
     }
 
+    /**
+     * Método que permite transferir dinero de una cuenta de un  usuario a otro usuario
+     * @param nombreDestinario
+     * @param cantidad
+     *
+     * Complejidad temporal: O(n) Tiempo  lineal
+     */
     public void Transferir(String nombreDestinario, double cantidad) {
         if (usuarioAutenticado != null) {
             Usuario destinario = null;
@@ -75,7 +107,13 @@ class CuentaBancaria {
         }
 
     }
-
+    /**
+     * Método que permite autenticar el usuario en el banco
+     * @param nombreUsuario
+     * @param contraseña
+     *
+     * Complejidad temporal: O(n) Tiempo lineal
+     */
     public void Autentificar(String nombreUsuario, String contraseña) {
         Usuario usuarioEncontrado = null;
 
@@ -106,20 +144,27 @@ class CuentaBancaria {
 
                     /* Switch case tiempo constante 0(1) */
                     switch (opcion) {
-                        case 1 ->
+                        case 1 ->/* Caso para obtener el saldo del usuario, complejidad de tiempo constante */
+                            // tiempo constante, O(1)
                             // System.out.println("\n");
                             System.out.println("Tu saldo es de " + usuarioAutenticado.getSaldo());
                         case 2 -> {
+                            /* Caso para ingresar dinero a la cuenta del usuario, complejidad de tiempo constante */
+                            // tiempo constante, O(1)
                             System.out.println("Digite la cantidad a ingresar");
                             double cantidadIngresada = Double.parseDouble(lector.nextLine());
                             Depositar(cantidadIngresada);
                         }
                         case 3 -> {
+                            /* Caso para retirar dinero de la cuenta del usuario, complejidad de tiempo constante */
+                            // tiempo constante, O(1)
                             System.out.println("Digite la cantidad a retirar");
                             double cantidadRetirada = Double.parseDouble(lector.nextLine());
                             Retirar(cantidadRetirada);
                         }
                         case 4 -> {
+                            /* Caso para realizar la transaccion de una cuneta usuario a otra cuenta, complejidad de tiempo constante */
+                            // tiempo constante, O(1)
                             System.out.println("Ingrese el usuario al que desea enviar");
                             String usarioDestinario = lector.nextLine();
                             System.out.println("Ingrese la cantidad a enviar");
@@ -127,10 +172,14 @@ class CuentaBancaria {
                             Transferir(usarioDestinario, cantidadEnviar);
                         }
                         case 0 -> {
+                            /* Caso para salir del menu del banco, complejidad de tiempo constante */
+                            // tiempo constante, O(1)
                             System.out.println("\n");
                             System.out.println("Saliendo de WolfBank. Hasta la proxima");
                         }
                         default -> {
+                            /* Caso para cuando el usuario digita una opcion no valida, complejidad de tiempo constante */
+                            // tiempo constante, O(1)
                             System.out.println("\n");
                             System.out.println("Opción no válida. Por favor, elija una opción válida.");
                         }
